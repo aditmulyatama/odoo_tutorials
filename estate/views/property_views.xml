@@ -16,7 +16,6 @@
                 <field name="property_type_id" />
                 <field name="tag_ids" widget="many2many_tags" />
                 <field name="state" /> <!-- Make state invisible -->
-
             </tree>
         </field>
     </record>
@@ -29,24 +28,18 @@
             <form string="Properties">
                 <header>
                     <button string="SOLD" name="action_sold_state" type="object"
-                        class="oe_highlight"
-                        invisible="state in ('sold', 'canceled')" />
-                    <button string="CANCEL"
-                        name="action_cancel_state" type="object"
-                        class="oe_highlight"
-                        invisible="state in ('sold', 'canceled')" />
-                    <field name="state"
-                        widget='statusbar'
+                        class="oe_highlight" invisible="state in ('sold', 'canceled')" />
+                    <button string="CANCEL" name="action_cancel_state" type="object"
+                        class="oe_highlight" invisible="state in ('sold', 'canceled')" />
+                    <field name="state" widget='statusbar'
                         statusbar_visible="new,offer_received,offer_accepted,sold" />
-
                 </header>
                 <sheet>
                     <h1 style="font-size:3em;font-weight:bold">
                         <field name="name" />
                     </h1>
                     <group>
-                        <field name="tag_ids" widget="many2many_tags"
-                            editable="bottom"
+                        <field name="tag_ids" widget="many2many_tags" editable="bottom"
                             options="{'color_field': 'color'}" />
                         <group>
                             <field name="property_type_id" widget='many2one'
@@ -69,20 +62,15 @@
                                 <field name="facades" />
                                 <field name="garage" />
                                 <field name="garden" />
-                                <field name="garden_area"
-                                    invisible="not garden"
-                                />
-                                <field name="garden_orientation"
-                                    invisible="not garden" />
+                                <field name="garden_area" invisible="not garden" />
+                                <field name="garden_orientation" invisible="not garden" />
                                 <field name="total_area" />
                             </group>
                         </page>
                         <page string="Offer">
-                            <field name="offer_ids"
-                                editable="bottom"
+                            <field name="offer_ids" editable="bottom"
                                 readonly="state in ('offer_accepted', 'sold', 'canceled')"
-                                context="{'form_view_ref': 'estate_property_offer_view_form', 
-                                'tree_view_ref': 'estate_property_offer_view_tree'}" />
+                                context="{'form_view_ref': 'estate_property_offer_view_form', 'tree_view_ref': 'estate_property_offer_view_tree'}" />
                         </page>
                         <page string="Other Info">
                             <group>
@@ -108,10 +96,8 @@
                 <field name="bedrooms" />
                 <field name="living_area" />
                 <field name="facades" />
-                <field name="living_area"
-                    filter_domain="[('living_area', '>=', self)]" />
-                <filter name="available"
-                    domain="[('state','in',['new','offer_received'])]"
+                <field name="living_area" filter_domain="[('living_area', '>=', self)]" />
+                <filter name="available" domain="[('state','in',['new','offer_received'])]"
                     string="Available" />
                 <filter context="{'group_by': 'postcode'}" name="postcode" string="Postcode" />
                 <field name="property_type_id" />
@@ -138,14 +124,11 @@
                                 invisible="1" />
                             <div name="best_price"
                                 t-if="record.state.raw_value == 'offer_received'"> Best Price: <field
-                                    name="best_price" />
-                            </div>
+                                    name="best_price" /></div>
                             <div
                                 t-if="record.state.raw_value == 'offer_accepted'"> Selling Price: <field
-                                    name="selling_price" />
-                            </div>
-                            <field
-                                name="tag_ids" />
+                                    name="selling_price" /></div>
+                            <field name="tag_ids" />
                         </div>
                     </t>
                 </templates>
