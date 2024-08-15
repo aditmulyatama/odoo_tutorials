@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class estate_module(models.Model):
-#     _name = 'estate_module.estate_module'
-#     _description = 'estate_module.estate_module'
+# class estate_account(models.Model):
+#     _name = 'estate_account.estate_account'
+#     _description = 'estate_account.estate_account'
 
 #     name = fields.Char()
 #     value = fields.Integer()
