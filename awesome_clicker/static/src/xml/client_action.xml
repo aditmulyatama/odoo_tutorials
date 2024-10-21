@@ -1,0 +1,7 @@
+<template xml:space="preserve">
+    <t t-name="ClientActionTemplate">
+        <div>
+            <h2>Clicker Game</h2>
+        </div>
+    </t>
+</template>

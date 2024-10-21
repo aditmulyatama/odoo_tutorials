@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="ClickerSystrayItemTemplate" owl="1">
+        <div class="o_systray_item o_clicker_systray_item">
+            Clicks: <t t-esc="state.clickCount"/>
+        <button class="btn btn-outline-primary mx-1 btn-same-size fa fa-md fa-hand-pointer-o" t-on-click="incrementClickCount">
+
+        </button>
+        <button class="btn btn-outline-primary" t-on-click="openClientAction">
+            Open
+        </button>
+    </div>
+</t>
+</templates>
