@@ -1,17 +1,17 @@
 /** @odoo-module **/
 
-import { Component } from "@odoo/owl";
+import { Component, useState } from "@odoo/owl";
 import { registry } from "@web/core/registry";
+import { useService } from "@web/core/utils/hooks";
+
+
 
 class ClientAction extends Component {
     setup() {
         // You can add setup logic here if needed
+        this.clickerStateService = useState(useService("awesome_clicker.clicker_state"));
     }
     static props = ['*'];
-
-    closePopup() {
-        this.trigger('close'); // Trigger the close event
-    }
 }
 
 ClientAction.template = "ClientActionTemplate";

@@ -7,8 +7,9 @@ import { useService } from "@web/core/utils/hooks";
 class ClickerSystrayItem extends Component {
     setup() {
         this.actionService = useService("action");
-        this.state = useState({ clickCount: 0 });
-        useExternalListener(document.body, "click", () => this.state.clickCount += 1, { capture: true });
+        this.clickerStateService = useState(useService("awesome_clicker.clicker_state"));
+        // this.state = useState({ clickCount: 0 });
+        // useExternalListener(document.body, "click", () => this.state.clickCount += 1, { capture: true });
     }
 
     openClientAction() {

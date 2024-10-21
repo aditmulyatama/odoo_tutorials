@@ -17,4 +17,4 @@ const clickerStateService = {
     },
 };
 
-registry.category("services").add("clicker_state", clickerStateService);
+registry.category("services").add("awesome_clicker.clicker_state", clickerStateService);
