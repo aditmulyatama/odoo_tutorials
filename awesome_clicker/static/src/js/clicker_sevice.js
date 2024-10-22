@@ -1,6 +1,8 @@
 /** @odoo-module **/
 import { registry } from "@web/core/registry";
 import { reactive } from "@odoo/owl";
+import { useComponent } from "@web/core/utils/hooks";
+
 
 const clickerStateService = {
     start(env) {

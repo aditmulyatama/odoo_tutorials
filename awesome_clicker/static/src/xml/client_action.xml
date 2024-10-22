@@ -1,10 +1,13 @@
 <template xml:space="preserve">
     <t t-name="ClientActionTemplate">
-        <h2>
-            <!-- <h2>Clicker Game</h2> -->
-            Clicks:            <t t-esc="clickerStateService.state.clickCount"/>
-            <button class="btn btn-outline-primary" t-on-click="() => this.clickerStateService.increment(9)">Increments</button>
+        <div class="m-3">
+            <h2>
+                <!-- <h2>Clicker Game</h2> -->
+                Clicks:                <t t-esc="clicker.state.clickCount"/>
+                <button class="mx-2 btn btn-outline-primary" t-on-click="() => this.clicker.increment(9)">Increments</button>
 
-        </h2>
+            </h2>
+        </div>
+
     </t>
 </template>
