@@ -6,3 +6,4 @@ import { useState } from "@odoo/owl";
 export function useClicker() {
     return useState(useService("awesome_clicker.clicker_state"));
 }
+

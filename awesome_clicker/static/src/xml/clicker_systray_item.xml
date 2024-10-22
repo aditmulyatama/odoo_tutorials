@@ -3,7 +3,7 @@
 <templates xml:space="preserve">
     <t t-name="ClickerSystrayItemTemplate" owl="1">
         <div class="o_systray_item o_clicker_systray_item">
-            Clicks: <t t-esc="clicker.state.clickCount"/>
+            Clicks: <ClickValue value="clicker.state.clickValue"/>
         <button class="btn btn-outline-primary mx-1 btn-same-size fa fa-md fa-hand-pointer-o" t-on-click="() => this.clicker.increment(9)">
 
         </button>
