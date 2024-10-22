@@ -7,25 +7,64 @@
                 <button class="mx-2 btn btn-outline-primary" t-on-click="() => this.clicker.increment(9)">Increments</button>
 
             </p>
-            <div t-if="clicker.state.level >= 1">
-                <h2>Bots</h2>
-                <div class="d-flex flex-wrap">
+            <div t-if="clicker.state.clickCount >= 100">
+                <div class="container">
+                    <h2>Bots</h2>
+
                     <!-- Make a card / table with 2 row, header that kind of grey -->
-                    <div class="card">
-                        <div class="card-header bg-secondary">
-                            <h5>1x ClickBots (10 clicks/10seconds) <i class="fa fa-android"></i>
-                            </h5>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    <h5>
+                                        <t t-esc="clicker.state.clickBots"/>
+                                        x clickBots (10 clicks/10seconds) <i class="fa fa-android"></i>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 1000" t-on-click="() => clicker.buyClickBot(1000)">
+                                        Buy ClickBot (1000 clicks)
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 1000" t-on-click="() => clicker.buyClickBot(1000)">
-                                Buy ClickBot (1000 clicks)
-                            </button>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    <h5>
+                                        <t t-esc="clicker.state.bigBots"/>
+                                        x bigBots (100 clicks/10seconds) <i class="fa fa-android"></i>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 5000" t-on-click="() => clicker.buyBigBot(5000)">
+                                        Buy BigBot (5000 clicks)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Power Multipliers</h2>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    <h5>
+                                        <t t-esc="clicker.state.powerMultiplier"/>
+                                        x  <i class="fa fa-bolt"></i>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 100000" t-on-click="() => clicker.buyPowerMultiplier(50000)">
+                                        Buy Power Multiplier (50000 clicks)
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </t>
 </template>
