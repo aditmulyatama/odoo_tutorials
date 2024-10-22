@@ -1,6 +1,5 @@
 /** @odoo-module **/
 
-export function randomReward(clicker) {
-    const reward = rewards[Math.floor(Math.random() * rewards.length)];
-    reward.apply(clicker);
+export function choose(list) {
+    return list[Math.floor(Math.random() * list.length)];
 }

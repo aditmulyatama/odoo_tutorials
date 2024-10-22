@@ -3,6 +3,7 @@ import { Reactive } from "@web/core/utils/reactive";
 import { EventBus } from "@odoo/owl";
 import { humanNumber } from "@web/core/utils/numbers";
 import { rewards } from "./click_reward";
+import { choose } from "./utils";
 export class ClickerModel extends Reactive {
     constructor() {
         super();
@@ -17,8 +18,7 @@ export class ClickerModel extends Reactive {
         this.bus = new EventBus();
     }
     getRandomReward() {
-        const reward = rewards[Math.floor(Math.random() * rewards.length)];
-        reward.apply(this);
+        choose(rewards).apply(this);
     }
     increment(inc) {
         this.state.clickCount += inc * 10;
