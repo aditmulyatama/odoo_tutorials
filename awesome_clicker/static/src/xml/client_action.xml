@@ -3,9 +3,7 @@
         <div class="m-3">
             <h2>
                 <!-- <h2>Clicker Game</h2> -->
-                Clicks:                <span data-tooltip="clicker.state.clickCount">
-                    <ClickValue value="clicker.state.clickValue"/>
-                </span>
+                Clicks:                <ClickValue/>
                 <button class="mx-2 btn btn-outline-primary" t-on-click="() => this.clicker.increment(9)">Increments</button>
 
             </h2>

@@ -14,7 +14,7 @@ const clickerStateService = {
         });
         function increment(inc) {
             state.clickCount += inc * 10;
-            state.clickValue = humanNumber(state.clickCount, { decimals: 1, minDigits: 1 });
+            state.clickValue = humanNumber(state.clickCount, { decimals: 1, minDigits: 0 });
 
         }
         function humanizeClickCount() {

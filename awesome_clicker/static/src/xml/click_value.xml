@@ -2,6 +2,7 @@
 
 <templates xml:space="preserve">
     <t t-name="ClickValue" owl="1">
-        <span t-esc="props.value"/>
+
+        <span t-esc="clicker.state.clickValue" t-att-data-tooltip="clicker.state.clickCount"/>
     </t>
 </templates>
