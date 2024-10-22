@@ -4,14 +4,14 @@ export const rewards = [
     {
         description: "Get 1 click bot",
         apply(clicker) {
-            clicker.buyClickBot(bots_amount = 1);
+            clicker.buyClickBot(1);
         },
         maxLevel: 3,
     },
     {
         description: "Get 10 click bot",
         apply(clicker) {
-            clicker.buyClickBot(bots_amount = 10);
+            clicker.buyClickBot(10);
         },
         minLevel: 3,
         maxLevel: 4,

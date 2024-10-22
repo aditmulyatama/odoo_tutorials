@@ -22,7 +22,7 @@
                                     </h5>
                                 </div>
                                 <div class="card-body">
-                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 1000" t-on-click="() => clicker.buyClickBot(1000)">
+                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 1000" t-on-click="() => clicker.buyClickBot()">
                                         Buy ClickBot (1000 clicks)
                                     </button>
                                 </div>
@@ -37,7 +37,7 @@
                                     </h5>
                                 </div>
                                 <div class="card-body">
-                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 5000" t-on-click="() => clicker.buyBigBot(5000)">
+                                    <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 5000" t-on-click="() => clicker.buyBigBot()">
                                         Buy BigBot (5000 clicks)
                                     </button>
                                 </div>
@@ -58,6 +58,21 @@
                                 <div class="card-body">
                                     <button class="mx-2 btn btn-primary" t-att-disabled="clicker.state.clickCount lte 100000" t-on-click="() => clicker.buyPowerMultiplier(50000)">
                                         Buy Power Multiplier (50000 clicks)
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header bg-secondary">
+                                    <h5>
+                                   Get Random Reward <i class="fa fa-gift"></i>
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <button class="mx-2 btn btn-primary" t-on-click="() => clicker.getRandomReward()">
+                                    Get Random Reward
                                     </button>
                                 </div>
                             </div>
