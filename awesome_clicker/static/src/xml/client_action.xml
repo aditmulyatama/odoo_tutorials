@@ -1,12 +1,34 @@
 <template xml:space="preserve">
     <t t-name="ClientActionTemplate">
         <div class="m-3">
-            <p>
-                <!-- <h2>Clicker Game</h2> -->
-                Clicks:                <ClickValue/>
-                <button class="mx-2 btn btn-outline-primary" t-on-click="() => this.clicker.increment(9)">Increments</button>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <!-- <h2>Clicker Game</h2> -->
+                        Clicks:                            <ClickValue/>
+                            <button class="mx-2 btn btn-outline-primary" t-on-click="() => this.clicker.increment(9)">Increments</button>
 
-            </p>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <h2>Level: <t t-esc="clicker.state.level"/>
+                        </h2>
+                    </div>
+                    <div class="col" t-if="clicker.state.level lt clicker.threshold.length - 1">
+                        <h2>
+                            Next Level: <t t-esc="clicker.threshold[clicker.state.level + 1]"/>
+ Clicks
+                        </h2>
+                    </div>
+                    <div class="col" t-else="">
+                        <h2>Max Level</h2>
+                    </div>
+                </div>
+
+
+
+            </div>
             <div t-if="clicker.state.clickCount >= 100">
                 <div class="container">
                     <h2>Bots</h2>

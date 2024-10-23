@@ -15,10 +15,17 @@ export class ClickerModel extends Reactive {
             bigBots: 0,
             powerMultiplier: 1,
         };
+        this.threshold = [0, 1000, 5000, 100000];
         this.bus = new EventBus();
     }
     getRandomReward() {
-        choose(rewards).apply(this);
+        const reward = choose(rewards);
+        const minLevel = reward.minLevel !== undefined ? reward.minLevel : -Infinity;
+        const maxLevel = reward.maxLevel !== undefined ? reward.maxLevel : Infinity;
+
+        if (this.state.level >= minLevel && this.state.level <= maxLevel) {
+            reward.apply(this);
+        }
     }
     increment(inc) {
         this.state.clickCount += inc * 10;
@@ -46,8 +53,7 @@ export class ClickerModel extends Reactive {
         this.state.powerMultiplier += 1;
     }
     levelUp() {
-        const thresholds = [0, 1000, 5000, 100000];
-        if (this.state.clickCount >= thresholds[this.state.level + 1]) {
+        if (this.state.clickCount >= this.threshold[this.state.level + 1]) {
             this.state.level += 1;
             this.bus.trigger('MILESTONE_1k');
         }
