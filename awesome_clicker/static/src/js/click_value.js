@@ -11,8 +11,4 @@ export class ClickValue extends Component {
     }
 }
 
-ClickValue.props = {
-    value: Number,
-};
-
 ClickValue.template = "ClickValue"; // Ensure you have a template defined for this component
